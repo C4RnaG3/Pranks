@@ -1,2 +1,2 @@
-# Pranks
-Some fun stuff for your friends
+# Misc
+An assortment of ranodm things I can think of
