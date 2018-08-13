@@ -7,13 +7,12 @@
 # This is pre-alpha of the final product which will host a suite of tools
 # that can be used in the NETSEC world.
 ######
-#Change notes from Part 2 to Part 3:
-#	Created a class for the Port scanner
-#	Organized the code
 #Coming up:
 #	Finishing the Port scanner
 #	Cleaning up the code
 #   Aesthetic touches
+#   Anything else I can think of
+#	This project will have it's own repo on GitHub shortly
 ######
 #
 # Huge thanks to StackOverflow, without that, this would not have gotten done!!
@@ -77,6 +76,7 @@ def screenClear():
 		os.system('cls') 					#clear screen command for Linux
 
 ###################################################################
+#class for the port scanner
 class PortScannerGUI(threading.Thread):
 	def __init__(self):
 		threading.Thread.__init__(self)
