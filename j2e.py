@@ -1,23 +1,29 @@
 #!/usr/bin/python
 
-#-- Used for Jiami to English translation for later use
-#-- Really early stages
+# -*- coding: utf-8 -*-
 
-import sys, getopt
+#-- Used for Jiami to English translation for later use
+
+#-- Basic libraries
+import sys, argparse, codecs
 
 #-- Imports the Translator module from the googletrans library (needs to be installed)
 from googletrans import Translator
 
+#----------------------
+#-- Command line parsing
+parser = argparse.ArgumentParser(prog='j2e')
+parser.add_argument('--file', help='File for parsing')
+args = parser.parse_args()
+#----------------------
+#-- File reading... if you can tell, I'm not good at python lol
+f=open(sys.argv[2], 'r')
+jfile=f.read()
+
 #-- intializes translator
 translator = Translator(service_urls=['translate.google.com'])
 
-#-- To do:
-#-- file parsing
-#-- Wrap this in a loop to continuously translate
-#-- Unicode support
-
 #-- https://github.com/ssut/py-googletrans/blob/master/googletrans/constants.py
-translations = translator.translate(['hi'], dest='zh-cn')
+translations = translator.translate([jfile], dest='en')
 for translation in translations:
     print(translation.origin, ' -> ', translation.text)
-    
