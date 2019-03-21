@@ -2,10 +2,8 @@
 
 # -*- coding: utf-8 -*-
 
-#-- to do list:
-#--     Clean up the output
 
-# Tested against a php script that simply echoed a chinese string, and it was successfully decoded
+# Tested against a file copied from https://hotexamples.com/examples/-/-/jiami/php-jiami-function-examples.html
 
 #-- Basic libraries
 import sys, argparse
@@ -31,5 +29,7 @@ translator = Translator(service_urls=['translate.google.com'])
 translations = translator.translate([jfile], dest='en')
 for translation in translations:
 #-- translates the unicode to its English equivelant
-    print(translation.origin, ' -> ', translation.text)
+#-- Cleaned up the output, will display the whole decoded file, with some unneded capitalization
+    print("Translation: ")
+    print(translation.text)
     
